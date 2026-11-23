@@ -3,6 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        try {
+          var ownDesc = Object.getOwnPropertyDescriptor(window, 'fetch');
+          var proto = typeof Window !== 'undefined' ? Window.prototype : Object.getPrototypeOf(window);
+          var protoDesc = proto ? Object.getOwnPropertyDescriptor(proto, 'fetch') : null;
+          if (ownDesc && ownDesc.get && !ownDesc.set && ownDesc.configurable) {
+            var currentFetch = ownDesc.get.call(window);
+            Object.defineProperty(window, 'fetch', {
+              configurable: true,
+              enumerable: ownDesc.enumerable !== false,
+              get: function () {
+                return currentFetch || (ownDesc.get ? ownDesc.get.call(window) : undefined);
+              },
+              set: function (nextFetch) {
+                currentFetch = nextFetch;
+              },
+            });
+          } else if (!ownDesc && protoDesc && protoDesc.get && !protoDesc.set) {
+            var overrideFetch = null;
+            Object.defineProperty(window, 'fetch', {
+              configurable: true,
+              enumerable: true,
+              get: function () {
+                return overrideFetch || protoDesc.get.call(window);
+              },
+              set: function (nextFetch) {
+                overrideFetch = nextFetch;
+              },
+            });
+          }
+        } catch (_) {}
+
+        window.addEventListener(
+          'error',
+          function (event) {
+            if (event && typeof event.filename === 'string' && event.filename.indexOf('chrome-extension://') === 0) {
+              event.preventDefault();
+              event.stopImmediatePropagation();
+            }
+          },
+          true
+        );
+
+        window.addEventListener(
+          'unhandledrejection',
+          function (event) {
+            var reason = event && event.reason;
+            var stack = reason && typeof reason.stack === 'string' ? reason.stack : '';
+            if (stack.indexOf('chrome-extension://') !== -1 && stack.indexOf(window.location.origin) === -1) {
+              event.preventDefault();
+              event.stopImmediatePropagation();
+            }
+          },
+          true
+        );
+      })();
+    </script>
     <title>TRISVAX Studio</title>
     <meta name="description" content="100% offline-first mobile video editor with multi-clip timeline, trim, split, crop, rotate, speed, volume, music, text overlays, voiceover, and 1080p MP4 export." />
     <meta property="og:title" content="TRISVAX Studio" />
