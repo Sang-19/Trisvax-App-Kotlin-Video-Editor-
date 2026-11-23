@@ -4,7 +4,7 @@
 
 ## Project Structure
 
-- `app/src/main/assets/music/` — Bundled offline audio tracks (`ambient_horizon.mp3`, `urban_pulse.mp3`, `golden_hour_lofi.mp3`)
+- `app/src/main/assets/music/` — Bundled offline audio tracks (`demo_track.mp3`, `ambient_horizon.mp3`, `urban_pulse.mp3`, `golden_hour_lofi.mp3`)
 - `app/src/main/java/com/trisvax/studio/`
   - `theme/` — Official TRISVAX dark palette tokens
   - `models/` — Serializable timeline, clip, crop, music, text overlay, voiceover models

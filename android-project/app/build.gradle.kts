@@ -45,6 +45,12 @@ android {
         compose = true
     }
 
+    sourceSets {
+        getByName("main") {
+            assets.srcDirs("src/main/assets")
+        }
+    }
+
     androidResources {
         noCompress += listOf("mp3", "m4a", "wav", "ogg")
     }
