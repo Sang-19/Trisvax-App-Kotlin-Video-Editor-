@@ -1,0 +1,6 @@
+{
+  "name": "TRISVAX Studio",
+  "description": "100% offline-first mobile video editor with multi-clip timeline, trim, split, crop, rotate, speed, volume, music, text overlays, voiceover, 1080p MP4 export, and native Android Kotlin/Compose project.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": []
+}

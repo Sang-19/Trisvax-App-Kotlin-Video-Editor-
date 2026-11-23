@@ -1,0 +1,2 @@
+-keep class com.trisvax.studio.models.** { *; }
+-keepattributes *Annotation*

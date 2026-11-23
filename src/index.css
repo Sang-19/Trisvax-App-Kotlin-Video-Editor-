@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --trisvax-bg: #0B0807;
+    --trisvax-card: #18110D;
+    --trisvax-card-secondary: #221711;
+    --trisvax-orange: #FF5500;
+    --trisvax-orange-secondary: #FF8232;
+    --trisvax-text: #FFFFFF;
+    --trisvax-text-secondary: #9AA69B;
+    --trisvax-text-muted: #667568;
+    --trisvax-border: #2B352D;
+    --trisvax-blue: #82B8FF;
+    --trisvax-danger: #FF5A5A;
+  }
+
+  html,
+  body {
+    background-color: #0B0807;
+    color: #FFFFFF;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
+  }
+
+  .font-mono-tabular {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom slim scrollbar matching dark TRISVAX surfaces */
+::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0807;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2B352D;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF5500;
+}
