@@ -7,7 +7,7 @@ lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.9.3"
 composeBom = "2024.12.01"
 navigationCompose = "2.8.5"
-media3 = "1.5.1"
+media3 = "1.6.1"
 room = "2.6.1"
 datastore = "1.1.1"
 coil = "2.7.0"
@@ -56,7 +56,7 @@ androidx-exifinterface = { group = "androidx.exifinterface", name = "exifinterfa
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
-kotlin-android = { id = "com.android.kotlin.android", version.ref = "kotlin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }

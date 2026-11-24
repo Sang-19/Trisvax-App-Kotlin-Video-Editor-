@@ -19,7 +19,7 @@ import androidx.media3.common.audio.SonicAudioProcessor
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.effect.Crop
 import androidx.media3.effect.OverlayEffect
-import androidx.media3.effect.OverlaySettings
+import androidx.media3.common.OverlaySettings
 import androidx.media3.effect.Presentation
 import androidx.media3.effect.ScaleAndRotateTransformation
 import androidx.media3.effect.StaticOverlaySettings
